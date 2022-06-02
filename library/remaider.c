@@ -10,26 +10,30 @@
 
 // Return multiple values from a function in C
 int remaider(void){
-    int h, m,s;
-    struct getRemaider gR[2];
+    int h, m,s, n;
+    struct getRemaider *ptr;
+
+    // set how many remaider user want
+    printf("Enter the number of remaiders: ");
+    scanf("%d", &n);
+    // allocating memory for n numbers of struct getRemaider
+    ptr = (struct getRemaider*) malloc(n * sizeof(struct getRemaider));
 
     // user give info
-    printf("Enter 2 remaiders: \n");
-    for (int i = 0; i < 2; i++) {
+    for (int i = 0; i < n; i++) {
         printf("Enter content: ");
-        scanf("%s", gR[i].name);
+        scanf("%s", (ptr+i)->name);
         printf("Set hours: ");
-        scanf("%d", &gR[i].hours);
+        scanf("%d", &(ptr+i)->hours);
         printf("Set minute: ");
-        scanf("%d", &gR[i].minutes);
-        
+        scanf("%d", &(ptr+i)->minutes);     
     }
 
     // run clock and remain 
     while (1){
         system("clear");
         // get current time
-        struct TuplePhuong t = getCurrentTime();
+        struct CurrentTime t = getCurrentTime();
         h = t.hour;
         m = t.minute;
         s = t.second;
@@ -37,8 +41,8 @@ int remaider(void){
         fflush(stdout);
         // check remainder        
         for (int i = 0; i < 2; i++) {
-            if (gR[i].hours==h && gR[i].minutes == m){
-                printf("%s\n",gR[i].name);
+            if ((ptr+i)->hours==h && (ptr+i)->minutes == m){
+                printf("%s\n",(ptr+i)->name);
             }
         }
         system("sleep 1"); 

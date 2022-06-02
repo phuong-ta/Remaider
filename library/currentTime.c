@@ -3,12 +3,12 @@
 #include <time.h>
 
 // wrap the multiple values into a struct
-struct TuplePhuong {
+struct CurrentTime {
     int hour, minute, second ;
 };
  
 // Function to return multiple values using struct
-struct TuplePhuong getCurrentTime(){
+struct CurrentTime getCurrentTime(){
 
     //
     int hours, minutes, seconds, day, month, year;
@@ -37,7 +37,7 @@ struct TuplePhuong getCurrentTime(){
     */
 
     //
-    struct TuplePhuong t = { hours, minutes, seconds };
+    struct CurrentTime t = { hours, minutes, seconds };
  
     return t;
 }
