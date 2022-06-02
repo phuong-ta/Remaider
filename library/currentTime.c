@@ -14,7 +14,7 @@ struct TuplePhuong getCurrentTime(){
     int hours, minutes, seconds, day, month, year;
     time_t now;
     time(&now);
-    printf("Today is %s", ctime(&now));
+    //printf("Today is %s", ctime(&now));
  
     struct tm *local = localtime(&now);
  

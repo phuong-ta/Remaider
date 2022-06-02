@@ -6,20 +6,43 @@
 int remaider(void)
 {
     int h, m,s, hR, mR;
-    struct TuplePhuong t = getCurrentTime();
-    h = t.hour;
-    m = t.minute;
-    s = t.second;
- 
-    //printf("Hour = %d, Minute = %d, Second = %d\n", h, m, s);
-    printf("Set hours!");
-    scanf("%d", &hR);
-    printf("Set minuute!");
-    scanf("%d", &mR);
-    
-    if (hR==h && mR == m){
-        printf("remaider!!!!");
+    int conditional =1;
+    while (1){
+        system("clear");
+        struct TuplePhuong t = getCurrentTime();
+        h = t.hour;
+        m = t.minute;
+        s = t.second;
+        printf("%d: %d: %d \n", h, m , s);
+        fflush(stdout);
+        if (conditional==1){
+            printf("Set hours!");
+            scanf("%d", &hR);
+            printf("Set minuute!");
+            scanf("%d", &mR);
+            conditional=0;
+        }
+        if (hR==h && mR == m){
+        printf("remaider!!!!\n");
     }
+        system("sleep 1"); 
+    }
+    
+ 
+
+
     
     return 0;
 }
+/*
+            if (conditional==1){
+            printf("Set hours!");
+            scanf("%d", &hR);
+            printf("Set minuute!");
+            scanf("%d", &mR);
+            conditional=0;
+        }
+        if (hR==h && mR == m){
+        printf("remaider!!!!");
+    }
+*/
