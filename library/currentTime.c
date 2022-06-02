@@ -32,9 +32,9 @@ struct TuplePhuong getCurrentTime(){
     else {    // after midday
         printf("Time is %02d:%02d:%02d pm\n", hours - 12, minutes, seconds);
     }
-    */
+    
     printf("Date is: %02d/%02d/%d\n", day, month, year);
- 
+    */
 
     //
     struct TuplePhuong t = { hours, minutes, seconds };
